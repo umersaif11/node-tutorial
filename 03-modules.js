@@ -2,8 +2,10 @@
 // Modules - Encapsulated Code (only share minimum)
 const names  = require('./04-names')
 const sayHi = require('./05-utils')
-console.log(sayHi);
+const data = require('./06-alternative-moduling')
 
 sayHi('susan')
 sayHi(names.john)
 sayHi(names.peter)
+sayHi(data.items[0])
+sayHi(data.singlePerson.name)
