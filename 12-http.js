@@ -1,19 +1,29 @@
 const http = require('http')
 
 const server = http.createServer((req, res) => {
+    // if(req.url === '/') {
+    //     res.end('Welcome to our homepage')
+    //     return
+    // }
+    // if(req.url === '/about') {
+    //     res.end('Here is our short history')
+    //     return
+    // }
+    // res.end(
+    //     `<h1>Ooops!</h1>
+    //      <p>We can't seem to find page you are looking for</p>
+    //      <a href='/'>Back Home</a>`
+    // )
+    // return
     if(req.url === '/') {
         res.end('Welcome to our homepage')
-        return
-    }
-    if(req.url === '/about') {
+    }else if(req.url === '/about') {
         res.end('Here is our short history')
-        return
-    }
-    res.end(
+    } else {
+        res.end(
         `<h1>Ooops!</h1>
          <p>We can't seem to find page you are looking for</p>
          <a href='/'>Back Home</a>`
-    )
-    return
+    )}
 })
 server.listen(5000)
