@@ -1,0 +1,24 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-intro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umersaif11/node-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umersaif11/node-tutorial/issues"
+  },
+  "homepage": "https://github.com/umersaif11/node-tutorial#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "loadash": "^1.0.0"
+  }
+}
