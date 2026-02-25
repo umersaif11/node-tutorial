@@ -12,6 +12,14 @@ const getText = (path) => {
     })
 }
 
-getText('./content/first.txt')
-.then(result => console.log(result))
-.catch(error => console.log(error))
+//using promise
+// getText('./content/first.txt')
+// .then(result => console.log(result))
+// .catch(error => console.log(error))
+
+
+//using async await
+const start = async() => {
+    const first = getText('./content/first.txt')
+    console.log(first)
+}
