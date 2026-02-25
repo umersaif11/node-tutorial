@@ -1,8 +1,8 @@
 const { readFile, writeFile } = require('fs')
 
 const getText = (path) => {
-    return new Promise((reject, resolve) => {
-        readFile(path, (err, result) => {
+    return new Promise((resolve, reject) => {
+        readFile(path, 'utf8', (err, result) => {
             if (err) {
                 reject(err)
             } else {
@@ -11,3 +11,7 @@ const getText = (path) => {
         })
     })
 }
+
+getText('./content/first.txt')
+.then(result => console.log(result))
+.catch(error => console.log(error))
