@@ -1,4 +1,4 @@
-const { readFile, writeFile } = require('fs')
+const { readFile, writeFile } = require('fs').promises
 
 // const getText = (path) => {
 //     return new Promise((resolve, reject) => {
@@ -31,14 +31,29 @@ const { readFile, writeFile } = require('fs')
 // start()
 
 // (3) async await.... util.promisfy 
-const util = require('util')
-const readFilePromise = util.promisify(readFile)
-const writeFilePromise = util.promisify(writeFile)
+// const util = require('util')
+// const readFilePromise = util.promisify(readFile)
+// const writeFilePromise = util.promisify(writeFile)
+// const start = async() => {
+//     try {
+//         const first = await readFilePromise('./content/first.txt', 'utf8')
+//         const second = await readFilePromise('./content/second.txt', 'utf8')
+//         await writeFilePromise(
+//             './content/result-async-await.txt',
+//             `This is awesome: ${first}, ${second}`
+//         )
+//     } catch(error) {
+//         console.log(error)
+//     }
+// }
+// start()
+
+//(4) sync...await   require('fs').promises
 const start = async() => {
     try {
-        const first = await readFilePromise('./content/first.txt', 'utf8')
-        const second = await readFilePromise('./content/second.txt', 'utf8')
-        await writeFilePromise(
+        const first = await readFile('./content/first.txt', 'utf8')
+        const second = await readFile('./content/second.txt', 'utf8')
+        await writeFile(
             './content/result-async-await.txt',
             `This is awesome: ${first}, ${second}`
         )
